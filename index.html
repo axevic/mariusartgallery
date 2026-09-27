@@ -1,6 +1,5 @@
 <h1>Marius Artwork</h1>
 <div id="gallery" class="gallery-grid"></div>
-<div id="gallery" class="gallery-grid"></div>
 
 <div id="lightbox" class="lightbox">
   <button class="close">&times;</button>
@@ -9,3 +8,19 @@
   <div class="lightbox-caption"></div>
   <button class="next">&#8250;</button>
 </div>
+
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+
+<!-- make sure this is still here, pointing at wherever your main.js actually lives -->
+<script type="module" src="/src/main.js"></script>
